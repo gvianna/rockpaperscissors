@@ -1,15 +1,15 @@
-body{
+body {
   font: normal 15pt arial;
   margin: 0;
   padding: 0;
 }
 
-header h1{
+header h1 {
   text-align: center;
   padding-top: 5px;
 }
 
-section{
+section {
   background: white;
   border-radius: 10px;
   padding: 15px;
@@ -18,17 +18,53 @@ section{
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
-footer{
+footer {
   color: black;
 }
 
-.imgcontainer{
+.imgcontainer {
   text-align: center;
 }
 
-#img{
+img {
   padding: 15px;
   width: 80px;
   height: 100px;
   margin: auto;
+}
+
+/*seta os frames da animação*/
+@keyframes swing {
+    15% {
+        -webkit-transform: translateY(5px);
+        transform: translateY(5px);
+    }
+    30% {
+        -webkit-transform: translateY(-5px);
+        transform: translateY(-5px);
+    }
+    50% {
+        -webkit-transform: translateY(3px);
+        transform: translateY(3px);
+    }
+    65% {
+        -webkit-transform: translateY(-3px);
+        transform: translateY(-3px);
+    }
+    80% {
+        -webkit-transform: translateY(2px);
+        transform: translateY(2px);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+/*executa a animação no mouse hover*/
+img:hover {
+    -webkit-animation: swing 1s ease;
+    animation: swing 1s ease;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
 }
