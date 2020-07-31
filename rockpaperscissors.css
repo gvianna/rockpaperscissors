@@ -22,7 +22,7 @@ footer {
   color: black;
 }
 
-.imgcontainer {
+.imgcontainer, #result, #btnres{
   text-align: center;
 }
 
@@ -67,8 +67,4 @@ img:hover {
     animation: swing 1s ease;
     -webkit-animation-iteration-count: 1;
     animation-iteration-count: 1;
-}
-
-#result{
-  text-align: center;
 }
