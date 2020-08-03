@@ -3,7 +3,7 @@ var plassign;
 function choiceVerif(){
   let plchoice = event.srcElement.id;
   let showresult = document.querySelector('p#result');
-  if(plchoice == 'rock'){
+  if (plchoice == 'rock'){
     plassign = 'Rock';
   } else if (plchoice == 'paper'){
     plassign = 'Paper';
@@ -15,5 +15,9 @@ function choiceVerif(){
 }
 
 function runButton(){
-  alert(plassign);
+  if (plassign === undefined) {
+    alert ('[ERROR] You must pick rock, paper or scissor first');
+  } else {
+    alert (plassign);
+  }
 }
