@@ -1,5 +1,7 @@
+/*variavel global que guarda a escolha do usuario*/
 var plassign;
 
+/*verifica a escolha do usuario e exibe na div result*/
 function choiceVerif(){
   let plchoice = event.srcElement.id;
   let showresult = document.querySelector('p#result');
