@@ -12,13 +12,14 @@ function choiceVerif(){
   } else if (plchoice == 'scissor'){
     plassign = 'Scissor';
   }
+  document.querySelector('div#btnres').style.opacity = 1;
   showresult.innerHTML = ` You chose ${plassign}! `;
   return plassign;
 }
 
 function runButton(){
   if (plassign === undefined) {
-    alert ('[ERROR] You must pick rock, paper or scissor first');
+    document.querySelector('div#btnres').disabled = true;
   } else {
     alert (plassign);
   }
