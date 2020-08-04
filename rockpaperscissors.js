@@ -22,5 +22,11 @@ function runButton(){
     document.querySelector('div#btnres').disabled = true;
   } else {
     alert (plassign);
+    let battlesection = document.createElement('section');
+    let battlediv = document.querySelector('body');
+    battlesection.id = 'battlesection';
+    battlediv.appendChild(battlesection);
+    //let test = document.getElementById('battlesection');
+    //test.innerHTML = 'Peace was never an option...';
   }
 }
