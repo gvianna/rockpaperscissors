@@ -29,14 +29,23 @@ function runButton(){
       let battlediv = document.querySelector('body');
       battlesection.id = 'battlesection';
       battlediv.appendChild(battlesection);
-      battlesection.innerHTML = ` ${plassign} `;
-
       document.querySelector('input#runbtn').disabled = true;
-      var imgtags = document.getElementsByTagName('img');
-        for (var i=0; i < imgtags.length; i++){
-          imgtags[i].onclick = false;
-          //imgtags[i].onclick = choiceVerif();
+      //battlesection.innerHTML = ` ${plassign} VS {PLACEHOLDER}! `;
+        let imgtags = document.getElementsByTagName('img');
+          for (let i=0; i < imgtags.length; i++){
+            imgtags[i].onclick = false;
+            //imgtags[i].onclick = choiceVerif();
+          }
+      let plbattle = document.createElement('img');
+        if (plassign == 'Rock'){
+          plbattle.setAttribute('src', 'img/rock.png');
+        } else if (plassign == 'Paper'){
+          plbattle.setAttribute('src', 'img/paper.png');
+        } else if (plassign == 'Scissor'){
+          plbattle.setAttribute('src', 'img/scissor.png');
         }
+      document.getElementById('battlesection').appendChild(plbattle);
+      plbattle.id += 'plbattle';
     }
   }
 }
