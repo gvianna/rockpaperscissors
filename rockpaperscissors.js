@@ -21,16 +21,22 @@ function choiceVerif(){
 
 function runButton(){
   if (plassign === undefined) {
-    alert ('Pick either Rock, Paper or Scissor first!')
+    alert ('Pick either Rock, Paper or Scissor first!');
   } else {
     alert (plassign);
-    if (!document.getElementById('battlesection')){
+    if (!document.getElementById('battlesection')) {
       let battlesection = document.createElement('section');
       let battlediv = document.querySelector('body');
       battlesection.id = 'battlesection';
       battlediv.appendChild(battlesection);
       battlesection.innerHTML = ` ${plassign} `;
+
       document.querySelector('input#runbtn').disabled = true;
+      var imgtags = document.getElementsByTagName('img');
+        for (var i=0; i < imgtags.length; i++){
+          imgtags[i].onclick = false;
+          //imgtags[i].onclick = choiceVerif();
+        }
     }
   }
 }
