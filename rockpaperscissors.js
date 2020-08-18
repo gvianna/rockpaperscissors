@@ -1,5 +1,6 @@
 /*variavel global que guarda a escolha do usuario*/
 var plassign;
+document.querySelector('input#runbtn').disabled = true;
 
 /*verifica a escolha do usuario e exibe na div result*/
 function choiceVerif(){
@@ -12,6 +13,7 @@ function choiceVerif(){
   } else if (plchoice == 'scissor'){
     plassign = 'Scissor';
   }
+  document.querySelector('input#runbtn').disabled = false;
   document.querySelector('div#btnres').style.opacity = 1;
   showresult.innerHTML = ` You chose ${plassign}! `;
   return plassign;
@@ -19,14 +21,16 @@ function choiceVerif(){
 
 function runButton(){
   if (plassign === undefined) {
-    document.querySelector('div#btnres').disabled = true;
+    alert ('Pick either Rock, Paper or Scissor first!')
   } else {
     alert (plassign);
-    let battlesection = document.createElement('section');
-    let battlediv = document.querySelector('body');
-    battlesection.id = 'battlesection';
-    battlediv.appendChild(battlesection);
-    //let test = document.getElementById('battlesection');
-    //test.innerHTML = 'Peace was never an option...';
+    if (!document.getElementById('battlesection')){
+      let battlesection = document.createElement('section');
+      let battlediv = document.querySelector('body');
+      battlesection.id = 'battlesection';
+      battlediv.appendChild(battlesection);
+      battlesection.innerHTML = ` ${plassign} `;
+      document.querySelector('input#runbtn').disabled = true;
+    }
   }
 }
