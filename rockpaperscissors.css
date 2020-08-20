@@ -26,7 +26,7 @@ footer {
   text-align: center;
 }
 
-img {
+.plselect {
   padding: 15px;
   width: 80px;
   height: 100px;
@@ -62,7 +62,7 @@ img {
 }
 
 /*executa a animação no mouse hover*/
-img:hover {
+.plselect:hover {
     -webkit-animation: swing 1s ease;
     animation: swing 1s ease;
     -webkit-animation-iteration-count: 1;
@@ -84,5 +84,17 @@ img:hover {
 }
 
 #plbattle {
-  display: inline-block;
+  padding: 15px;
+  width: 80px;
+  height: 100px;
+  margin: auto;
+  transform: translateY(-75%);
+}
+
+#vsbattle {
+  padding: 15px;
+  width: 160px;
+  height: 300px;
+  margin: auto;
+  transform: translateX(-25%);
 }

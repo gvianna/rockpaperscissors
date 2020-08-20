@@ -1,6 +1,8 @@
 /*variavel global que guarda a escolha do usuario*/
 var plassign;
 document.querySelector('input#runbtn').disabled = true;
+/*variavel global que guarda a escolha do oponente*/
+var foeassign;
 
 /*verifica a escolha do usuario e exibe na div result*/
 function choiceVerif(){
@@ -46,6 +48,10 @@ function runButton(){
         }
       document.getElementById('battlesection').appendChild(plbattle);
       plbattle.id += 'plbattle';
+      let vsbattle = document.createElement('img');
+      vsbattle.setAttribute('src', 'img/vs.png');
+      document.getElementById('battlesection').appendChild(vsbattle);
+      vsbattle.id += 'vsbattle';
     }
   }
 }
