@@ -88,7 +88,8 @@ footer {
   width: 80px;
   height: 100px;
   margin: auto;
-  transform: translateY(-75%);
+  float: left;
+  transform: translate(175%, 75%);
 }
 
 #vsbattle {
@@ -96,5 +97,13 @@ footer {
   width: 160px;
   height: 300px;
   margin: auto;
-  transform: translateX(-25%);
+}
+
+#foebattle {
+  padding: 15px;
+  width: 80px;
+  height: 100px;
+  margin: auto;
+  float: right;
+  transform: translate(-175%, 75%);
 }

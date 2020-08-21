@@ -38,7 +38,20 @@ function runButton(){
             imgtags[i].onclick = false;
             //imgtags[i].onclick = choiceVerif();
           }
-      let plbattle = document.createElement('img');
+        let foebattle = document.createElement('img')
+        let foechoice = [rock, paper, scissor];
+        let foeresult = foechoice[Math.floor(Math.random() * foechoice.length)];
+        foeassign = foeresult;
+        if (foeassign === rock){
+          foebattle.setAttribute('src', 'img/rock.png');
+        } else if (foeassign === paper){
+          foebattle.setAttribute('src', 'img/paper.png');
+        } else if (foeassign === scissor){
+          foebattle.setAttribute('src', 'img/scissor.png');
+        }
+        document.getElementById('battlesection').appendChild(foebattle);
+        let plbattle = document.createElement('img');
+          foebattle.id += 'foebattle';
         if (plassign == 'Rock'){
           plbattle.setAttribute('src', 'img/rock.png');
         } else if (plassign == 'Paper'){
