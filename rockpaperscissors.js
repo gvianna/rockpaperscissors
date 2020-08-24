@@ -37,6 +37,17 @@ function runButton(){
             imgtags[i].onclick = false;
             //imgtags[i].onclick = choiceVerif();
           }
+          let pbattle = document.createElement('p');
+          document.getElementById('battlesection').appendChild(pbattle);
+          let inpbattle = document.createElement('p');
+          document.getElementById('battlesection').appendChild(inpbattle)
+            let resetbtn = document.createElement('input');
+              resetbtn.type = 'button';
+              resetbtn.value = 'Play again!';
+              resetbtn.onclick = function resetButton(){
+                alert('working!');
+              };
+            inpbattle.appendChild(resetbtn);
         let foebattle = document.createElement('img');
         let foechoice = [rock, paper, scissor];
         let foeresult = foechoice[Math.floor(Math.random() * foechoice.length)];
@@ -66,25 +77,24 @@ function runButton(){
         vsbattle.setAttribute('src', 'img/vs.png');
       document.getElementById('battlesection').appendChild(vsbattle);
       vsbattle.id += 'vsbattle';
-      console.log(` ${plassign} vs ${foeassign} `);
       if (plassign == 'Rock' && foeassign == 'Rock'){
-        console.log('Its a tie!');
+        pbattle.innerHTML = 'Its a tie!';
       } else if (plassign == 'Rock' && foeassign == 'Paper'){
-        console.log('You lost!');
+        pbattle.innerHTML = 'You lost!';
       } else if (plassign == 'Rock' && foeassign == 'Scissor'){
-        console.log('You won!');
+        pbattle.innerHTML = 'You won!';
       } else if (plassign == 'Paper' && foeassign == 'Rock'){
-        console.log('You won!');
+        pbattle.innerHTML = 'You won!';
       } else if (plassign == 'Paper' && foeassign == 'Paper'){
-        console.log('Its a tie!');
+        pbattle.innerHTML = 'Its a tie!';
       } else if (plassign == 'Paper' && foeassign == 'Scissor'){
-        console.log('You lost!');
+        pbattle.innerHTML = 'You lost!';
       } else if (plassign == 'Scissor' && foeassign == 'Rock'){
-        console.log('You lost!');
+        pbattle.innerHTML = 'You lost!';
       } else if (plassign == 'Scissor' && foeassign == 'Paper'){
-        console.log('You won!');
+        pbattle.innerHTML = 'You won!';
       } else if (plassign == 'Scissor' && foeassign == 'Scissor'){
-        console.log('Its a tie!');
+        pbattle.innerHTML = 'Its a tie!';
       }
 
     }
