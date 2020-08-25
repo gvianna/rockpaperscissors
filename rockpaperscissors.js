@@ -24,9 +24,7 @@ function choiceVerif(){
 function runButton(){
   if (plassign === undefined) {
     alert ('Pick either Rock, Paper or Scissor first!');
-  } else {
-    alert (plassign);
-    if (!document.getElementById('battlesection')) {
+  } else if (!document.getElementById('battlesection')) {
       let battlesection = document.createElement('section');
       let battlediv = document.querySelector('body');
       battlesection.id = 'battlesection';
@@ -35,7 +33,6 @@ function runButton(){
         let imgtags = document.getElementsByTagName('img');
           for (let i=0; i < imgtags.length; i++){
             imgtags[i].onclick = false;
-            //imgtags[i].onclick = choiceVerif();
           }
           let pbattle = document.createElement('p');
           document.getElementById('battlesection').appendChild(pbattle);
@@ -45,8 +42,28 @@ function runButton(){
               resetbtn.type = 'button';
               resetbtn.value = 'Play again!';
               resetbtn.onclick = function resetButton(){
-                alert('working!');
-              };
+                plassign = undefined;
+                battlediv.removeChild(battlesection);
+                document.querySelector('p#result').innerHTML = '';
+                  let imgs = document.getElementsByTagName('img')
+                  for (let i=0; i < imgs.length; i++){
+                    imgs[i].onclick = function choiceCheck(){
+                      let plchoice = event.srcElement.id;
+                      let showresult = document.querySelector('p#result');
+                        if (plchoice == 'rock'){
+                          plassign = 'Rock';
+                        } else if (plchoice == 'paper'){
+                          plassign = 'Paper';
+                        } else if (plchoice == 'scissor'){
+                          plassign = 'Scissor';
+                        }
+                      document.querySelector('input#runbtn').disabled = false;
+                      document.querySelector('div#btnres').style.opacity = 1;
+                      showresult.innerHTML = ` You chose ${plassign}! `;
+                      return plassign;
+                    };
+                  }
+              }
             inpbattle.appendChild(resetbtn);
         let foebattle = document.createElement('img');
         let foechoice = [rock, paper, scissor];
@@ -100,4 +117,3 @@ function runButton(){
     }
 
   }
-}
