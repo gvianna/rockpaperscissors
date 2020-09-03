@@ -3,7 +3,9 @@ var plassign;
 document.querySelector('input#runbtn').disabled = true;
 /*variavel global que guarda a escolha do oponente*/
 var foeassign;
-
+/*variavel global que guarda a pontuação*/
+var plscore = 0;
+var foescore = 0;
 /*verifica a escolha do usuario e exibe na div result*/
 function choiceVerif(){
   let plchoice = event.srcElement.id;
@@ -98,22 +100,28 @@ function runButton(){
         pbattle.innerHTML = 'Its a tie!';
       } else if (plassign == 'Rock' && foeassign == 'Paper'){
         pbattle.innerHTML = 'You lost!';
+        foescore += 10;
       } else if (plassign == 'Rock' && foeassign == 'Scissor'){
         pbattle.innerHTML = 'You won!';
+        plscore += 10;
       } else if (plassign == 'Paper' && foeassign == 'Rock'){
         pbattle.innerHTML = 'You won!';
+        plscore += 10;
       } else if (plassign == 'Paper' && foeassign == 'Paper'){
         pbattle.innerHTML = 'Its a tie!';
       } else if (plassign == 'Paper' && foeassign == 'Scissor'){
         pbattle.innerHTML = 'You lost!';
+        foescore += 10;
       } else if (plassign == 'Scissor' && foeassign == 'Rock'){
         pbattle.innerHTML = 'You lost!';
+        foescore += 10;
       } else if (plassign == 'Scissor' && foeassign == 'Paper'){
         pbattle.innerHTML = 'You won!';
+        plscore += 10;
       } else if (plassign == 'Scissor' && foeassign == 'Scissor'){
         pbattle.innerHTML = 'Its a tie!';
       }
-
+      document.querySelector('p#playerp').innerHTML = `Player score: ${plscore}`;
+      document.querySelector('p#foep').innerHTML = `Opponent score: ${foescore}`;
     }
-
   }

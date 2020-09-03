@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="rockpaperscissors.css">
-    <script type="text/javascript" src="rockpaperscissors.js"></script>
+    <script type="text/javascript" src="rockpaperscissors.js" defer></script>
     <title></title>
   </head>
   <header>
@@ -11,6 +11,12 @@
   <div>
   </div>
   <body>
+      <div class="plscore">
+        <p id="playerp"></p>
+      </div>
+      <div class="foescore">
+        <p id="foep"></p>
+      </div>
     <section>
         <div class="imgcontainer">
           <img src="img/rock.png" class="plselect" id="rock" onclick="choiceVerif()">

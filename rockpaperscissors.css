@@ -107,3 +107,17 @@ footer {
   float: right;
   transform: translate(-175%, 75%);
 }
+
+.plscore {
+  float: left;
+  padding: 30px;
+  width: 240px;
+  height: 100px;
+}
+
+.foescore {
+  float: right;
+  padding: 30px;
+  width: 240px;
+  height: 100px;
+}
